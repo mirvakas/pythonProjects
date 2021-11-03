@@ -1,5 +1,6 @@
 from chef import chef
 from chinesechef import chinesechef
+
 mychef = chef()
 mychef.special_dish()
 

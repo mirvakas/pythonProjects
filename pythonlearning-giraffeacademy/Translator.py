@@ -1,15 +1,15 @@
-#Converting a letter in the phrase (using conditional statement in loops)
+# Converting a letter in the phrase (using conditional statement in loops)
 def translate(phrase):
     translation = ""
     for letter in phrase:
         if letter.lower() in "aeiou":
             if letter.isupper():
-                translation= translation + "G"
+                translation = translation + "G"
             else:
                 translation = translation + "g"
         else:
             translation = translation + letter
     return translation
 
-print(translate(input("Enter the phrase: ")))
 
+print(translate(input("Enter the phrase: ")))

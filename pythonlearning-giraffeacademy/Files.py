@@ -15,12 +15,9 @@ employee_file.write("\n" + "Toby - Human Resource")
 print(employee_file.read())
 employee_file.close()
 
+
 def get_file_ext(filename):
-    return  filename[filename.index(".") + 1:]
+    return filename[filename.index(".") + 1:]
+
 
 print(get_file_ext("vakas.dat"))
-
-
-
-
-
