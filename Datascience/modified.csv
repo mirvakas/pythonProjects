@@ -1,0 +1,51 @@
+#,Name,Type 1,Type 2,Generation,Legendary,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed
+681,AegislashBlade Forme,Steel,Ghost,6,False,520,60,150,50,150,50,60
+681,AegislashShield Forme,Steel,Ghost,6,False,520,60,50,150,50,150,60
+698,Amaura,Rock,Ice,6,False,362,77,59,50,67,63,46
+683,Aromatisse,Fairy,,6,False,462,101,72,72,99,89,29
+699,Aurorus,Rock,Ice,6,False,521,123,77,72,99,92,58
+713,Avalugg,Ice,,6,False,514,95,117,184,44,46,28
+689,Barbaracle,Rock,Water,6,False,500,72,105,115,54,86,68
+712,Bergmite,Ice,,6,False,304,55,69,85,32,35,28
+688,Binacle,Rock,Water,6,False,306,42,52,67,39,56,50
+703,Carbink,Rock,Fairy,6,False,500,50,50,150,50,150,50
+692,Clauncher,Water,,6,False,330,50,53,62,58,63,44
+693,Clawitzer,Water,,6,False,500,71,73,88,120,89,59
+702,Dedenne,Electric,Fairy,6,False,431,67,58,57,81,67,101
+719,Diancie,Rock,Fairy,6,True,600,50,100,150,100,150,50
+719,DiancieMega Diancie,Rock,Fairy,6,True,700,50,160,110,160,110,110
+691,Dragalge,Poison,Dragon,6,False,494,65,75,90,97,123,44
+706,Goodra,Dragon,,6,False,600,90,100,70,110,150,80
+704,Goomy,Dragon,,6,False,300,45,50,35,55,75,40
+711,GourgeistAverage Size,Ghost,Grass,6,False,494,65,90,122,58,75,84
+711,GourgeistLarge Size,Ghost,Grass,6,False,494,75,95,122,58,75,69
+711,GourgeistSmall Size,Ghost,Grass,6,False,494,55,85,122,58,75,99
+711,GourgeistSuper Size,Ghost,Grass,6,False,494,85,100,122,58,75,54
+701,Hawlucha,Fighting,Flying,6,False,500,78,92,75,74,63,118
+695,Heliolisk,Electric,Normal,6,False,481,62,55,52,109,94,109
+694,Helioptile,Electric,Normal,6,False,289,44,38,33,61,43,70
+720,HoopaHoopa Confined,Psychic,Ghost,6,True,600,80,110,60,150,130,70
+720,HoopaHoopa Unbound,Psychic,Dark,6,True,680,80,160,60,170,130,80
+686,Inkay,Dark,Psychic,6,False,288,53,54,53,37,46,45
+707,Klefki,Steel,Fairy,6,False,470,57,80,91,80,87,75
+687,Malamar,Dark,Psychic,6,False,482,86,92,88,68,75,73
+714,Noibat,Flying,Dragon,6,False,245,40,30,35,45,40,55
+715,Noivern,Flying,Dragon,6,False,535,85,70,80,97,80,123
+708,Phantump,Ghost,Grass,6,False,309,43,70,48,50,60,38
+710,PumpkabooAverage Size,Ghost,Grass,6,False,335,49,66,70,44,55,51
+710,PumpkabooLarge Size,Ghost,Grass,6,False,335,54,66,70,44,55,46
+710,PumpkabooSmall Size,Ghost,Grass,6,False,335,44,66,70,44,55,56
+710,PumpkabooSuper Size,Ghost,Grass,6,False,335,59,66,70,44,55,41
+690,Skrelp,Poison,Water,6,False,320,50,60,60,60,60,30
+705,Sliggoo,Dragon,,6,False,452,68,75,53,83,113,60
+685,Slurpuff,Fairy,,6,False,480,82,80,86,85,75,72
+682,Spritzee,Fairy,,6,False,341,78,52,60,63,65,23
+684,Swirlix,Fairy,,6,False,341,62,48,66,59,57,49
+700,Sylveon,Fairy,,6,False,525,95,65,65,110,130,60
+709,Trevenant,Ghost,Grass,6,False,474,85,110,76,65,82,56
+697,Tyrantrum,Rock,Dragon,6,False,521,82,121,119,69,59,71
+696,Tyrunt,Rock,Dragon,6,False,362,58,89,77,45,45,48
+721,Volcanion,Fire,Water,6,True,600,80,110,120,130,90,70
+716,Xerneas,Fairy,,6,True,680,126,131,95,131,98,99
+717,Yveltal,Dark,Flying,6,True,680,126,131,95,131,98,99
+718,Zygarde50% Forme,Dragon,Ground,6,True,600,108,100,121,81,95,95
