@@ -1,7 +1,14 @@
-from selenium import webdriver
+# from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome()
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+ser = Service(r"C:/Users/vhmir/PycharmProjects/pythonProject/Business Analytics/chromedriver.exe")
+op = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=ser, options=op)
+
+# driver = webdriver.Chrome('C:/Users/vhmir/PycharmProjects/pythonProject/Business Analytics/chromedriver.exe')
+
 driver.get("https://www.python.org")
 print(driver.title)
 search_bar = driver.find_element("q")
