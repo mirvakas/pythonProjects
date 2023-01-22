@@ -1,21 +1,21 @@
+import datetime
+
 import cx_Oracle
 import pandas as pd
-import datetime
-import smtplib
-from email.message import EmailMessage
+
 # import numpy as np
 # import matplotlib.pyplot as plt
 
 year = datetime.date.today().year
-month = int(datetime.date.today().month)-1
+month = int(datetime.date.today().month) - 1
 if month <= 0:
-    year  = year-1
+    year = year - 1
     month = 12
 day = datetime.date.today().day
-TimeStamp = str(month)+str(year)
+TimeStamp = str(month) + str(year)
 
 cx_Oracle.init_oracle_client(lib_dir=r"C:/instantclient_19_12")
-userpwd = "alphabetagamma4" # Obtain password string from a user prompt or environment variable
+userpwd = "alphabetagamma4"  # Obtain password string from a user prompt or environment variable
 dsn = cx_Oracle.makedsn("amer8.corp.birchstreet.net", 1521, service_name="AMER8")
 
 connection = cx_Oracle.connect(user="vhmir", password=userpwd, dsn=dsn,
@@ -36,6 +36,6 @@ df2 = pd.read_sql(Total_Live_Purchasing_Locations, connection)
 
 
 with pd.ExcelWriter(FileNameExcel) as writer:  # doctest: +SKIP
-    df2.to_excel(writer, sheet_name= 'Summary', index=False)
+    df2.to_excel(writer, sheet_name='Summary', index=False)
 
 connection.close()
