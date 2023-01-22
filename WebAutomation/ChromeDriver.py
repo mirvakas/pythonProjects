@@ -8,4 +8,8 @@ search_bar.clear()
 search_bar.send_keys("getting started with python")
 search_bar.send_keys(Keys.RETURN)
 print(driver.current_url)
+<<<<<<< HEAD
 driver.close()
+=======
+driver.close()
+>>>>>>> origin/master
