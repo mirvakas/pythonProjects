@@ -8,6 +8,9 @@ if (z == '+'):
 elif (z == '-'):
     # print(x,z,y)
     print(x - y)
+elif (z == '*'):
+    # print(x,z,y)
+    print(x * y)
 elif (z == '/'):
     # print(x,z,y)
     print(x / y)
