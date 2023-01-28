@@ -1,3 +1,4 @@
 Vakas - Director
-Pratul - PM
-Tanuj - Servant
+Pratul - Director
+Arjun - Manager
+Suresh - Manager
