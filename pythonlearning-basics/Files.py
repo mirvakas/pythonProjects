@@ -5,7 +5,7 @@
 # C:\Users\vhmir\PycharmProjects\pythonProject
 # C:\Users\vhmir\OneDrive\Documents\Emp.txt
 
-employee_file = open('C:/Users/vhmir/OneDrive/Documents/Emp1.txt', "r+")
+employee_file = open('C:/Users/mirva/PycharmProjects/pythonProject/pythonlearning-basics/Emp.txt', "r+")
 # print(employee_file.read())
 try:
     print(employee_file.read())
