@@ -1,9 +1,10 @@
 import pandas as pd
-df= pd.read_csv('pokemon_data.csv')
+import openpyxl
+df= pd.read_csv('Datascience/pokemon_data.csv')
 df.head(5)
 # df.tail()
 # df.columns
-df2 = pd.read_csv('User list.csv')
+df2 = pd.read_csv('Datascience/User list.csv')
 df2.head()
 
 # df2.loc[df2['FULL_NAME'] == 'Jim Broker'] # Read specific cells
@@ -40,9 +41,9 @@ df = df[cols[0:4] + [cols[-1]] + cols[4:12]] # Way to show sequence of columns i
 df
 
 # Save output to a file¶
-df.to_csv('modified.csv', index = False)
-df.to_excel('modifiedexcel.xlsx', index = False)
-df.to_csv('modified.csv', index = False)
+df.to_csv('Datascience/modified.csv', index = False)
+df.to_excel('Datascience/modifiedexcel.xlsx', index = False)
+# df.to_csv('Datascience/modified.csv', index = False)
 df2.describe()
 
 # Conditional Filtering and use of Str.Contains function to filter keywords.¶
@@ -58,7 +59,7 @@ df.loc[df['Name'].str.contains('^d[a-z]*'.upper(), flags=re.I,  regex = True)]
 df.loc[df['Total'] > 500, ['Generation','Legendary']] = ['1',False]
 df.loc[df['Total'] > 500]
 
-Group By Function to Group Rows¶
+# Group By Function to Group Rows¶
 df.groupby(['Type 1']).mean().sort_values('Attack', ascending = 0)
 print(df.groupby(['Type 1']).sum().sort_values('Attack', ascending = 0))
 print(df.groupby(['Type 1']).count().sort_values('Attack', ascending = 0))
@@ -66,11 +67,11 @@ df['Count'] = 1
 df.groupby(['Type 1']).count()['Count']
 
 # Handling Data from Large Files in Smaller Chunks¶
-# for df in pd.read_csv('modified.csv', chunksize = 5):
-#     print("DATA FRAME: ")
-#     print(df)
+for df in pd.read_csv('modified.csv', chunksize = 5):
+    print("DATA FRAME: ")
+    print(df)
 new_df = pd.DataFrame(columns=df.columns)
-for df in pd.read_csv('pokemon_data.csv', chunksize=50):
+for df in pd.read_csv('Datascience/pokemon_data.csv', chunksize=50):
     results = df.groupby(['Type 1']).count()
     new_df = pd.concat([new_df, results])
 new_df.drop(columns = ['Type 1'])

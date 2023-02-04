@@ -1,0 +1,11 @@
+key,game,tournament_key,winner_id,p1_id,p2_id,p1_score,p2_score,location_names,bracket_name,bracket_order,set_order,best_of,game_data
+281065202,ultimate,one-up-ultimate-62722,2476877,2476877,2635043,2,1,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,A,3,[]
+281065203,ultimate,one-up-ultimate-62722,329522,329522,2865842,2,0,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,B,3,[]
+281065204,ultimate,one-up-ultimate-62722,135734,challonge__the_gahmur,135734,0,2,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,C,3,[]
+281065205,ultimate,one-up-ultimate-62722,25985,25985,C174671730,2,0,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,D,3,[]
+281065206,ultimate,one-up-ultimate-62722,C174659933,C174659933,challonge__PiersonG33,2,0,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,E,3,[]
+281065207,ultimate,one-up-ultimate-62722,1797904,1797904,C174671840,2,0,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,F,3,[]
+281065208,ultimate,one-up-ultimate-62722,challonge__jdbro2020,challonge__jdbro2020,challonge__testingisaac,2,1,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,G,3,[]
+281065209,ultimate,one-up-ultimate-62722,C174671731,1201523,C174671731,1,2,"[""W1"", ""Winners 1"", ""Winners Round 1""]",,1,H,3,[]
+281065210,ultimate,one-up-ultimate-62722,185155,185155,2476877,2,0,"[""W2"", ""Winners 2"", ""Winners Round 2""]",,1,I,3,[]
+281065211,ultimate,one-up-ultimate-62722,2520922,1205973,2520922,1,2,"[""W2"", ""Winners 2"", ""Winners Round 2""]",,1,J,3,[]
