@@ -13,16 +13,16 @@ TimeStamp = str(year)+str(month)+str(day)
 # TimeStamp = datetime.date.today()
 
 cx_Oracle.init_oracle_client(lib_dir=r"C:/instantclient_19_12")
-userpwd = "alphabetagamma7" # Obtain password string from a user prompt or environment variable
-dsn = cx_Oracle.makedsn("amer8.corp.birchstreet.net", 1521, service_name="AMER8")
+userpwd = "DBPwd" # Obtain password string from a user prompt or environment variable
+dsn = cx_Oracle.makedsn("HOSTNAME", PORT, service_name="SERVICE NAME")
 
-connection = cx_Oracle.connect(user="vhmir", password=userpwd, dsn=dsn,encoding="UTF-8")
+connection = cx_Oracle.connect(user="DBUserName", password=userpwd, dsn=dsn,encoding="UTF-8")
 cur = connection.cursor()
 Total_Live_Purchasing_Locations = "SELECT count(distinct a.company_Id) as \"A\" FROM PBEACH.PPO_MASTER_HEADER a,PBEACH.psm_company_profile b WHERE a.SUBSCRIBER_ID=641 and a.creation_date between TO_DATE('2021-01-01', 'YYYY-MM-DD') and TO_DATE('2022-12-01', 'YYYY-MM-DD') and nvl(a.is_deleted,0)!='1' and a.company_id not in (SELECT COMPANY_ID FROM PBEACH.PSM_COMPANY_PROFILE WHERE SUBSCRIBER_ID=641 and is_buyer=1 and active=1 and BATTR_VAL15 is null) and a.subscriber_id=b.subscriber_id and a.company_id=b.company_id and B.IS_BUYER=1 and b.active=1 and b.BATTR_VAL14 is not null"
 
 # dfe = cur.execute(query1)
 # rows = cur.fetchall()
-FileNameExcel = 'AmkAnalysis_' + str(TimeStamp) + '.xlsx'
+FileNameExcel = 'SpendAnalysis_' + str(TimeStamp) + '.xlsx'
 df2 = pd.read_sql(Total_Live_Purchasing_Locations, connection)
 # with open('Spend Analysis.sql') as f:
 #     newText=f.read().replace('2022-08-01', '2022-08-01')
@@ -68,10 +68,10 @@ with pd.ExcelWriter(FileNameExcel) as writer:  # doctest: +SKIP
 connection.close()
 
 msg = EmailMessage()
-msg['Subject'] = 'Aramark Spend Data'
-msg['From'] = 'vakasmir@yahoo.com'
-msg['To'] = 'abtiwari@birchstreet.net,vhmir@birchstreet.net'
-msg.set_content("Attached file contains the details of Spend Data which includes the count of active locations/sites/Profit Centers.\nReach out to Vikaus for further clarity on data.")
+msg['Subject'] = 'Customer Spend Data'
+msg['From'] = 'username@domain.com'
+msg['To'] = 'username@domain.net,username2@domain.net'
+msg.set_content("Attached file contains the details of Spend Data which includes the count of active locations/sites/Profit Centers.\nReach out to me for further clarity on data.")
 
 with open(FileNameExcel, "rb") as f:
     file_data = f.read()
@@ -80,7 +80,7 @@ with open(FileNameExcel, "rb") as f:
     msg.add_attachment(file_data,maintype="application", subtype= "xlsx", filename = file_name)
 try:
     server = smtplib.SMTP_SSL('smtp.mail.yahoo.com', 465)
-    server.login("vakasmir@yahoo.com", "uorxxuctvgepoyso")
+    server.login("user@domain.com", "pwd")
     server.send_message(msg)
     print("Email Sent Sucessfully!")
 except:
