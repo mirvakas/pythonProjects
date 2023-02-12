@@ -15,14 +15,14 @@ TimeStamp = str(year) + str(month) + str(day)
 # TimeStamp = datetime.date.today()
 
 cx_Oracle.init_oracle_client(lib_dir=r"C:/instantclient_19_12")
-userpwd = "alphabetagamma8"  # Obtain password string from a user prompt or environment variable
-dsn = cx_Oracle.makedsn("repos8.gdiindia.com", 1521, service_name="repos8.birchstreet.net")
+userpwd = "enter your password"  # Obtain password string from a user prompt or environment variable
+dsn = cx_Oracle.makedsn("host name", 1521, service_name="SERVICE_NAME")
 
-connection = cx_Oracle.connect(user="vhmir", password=userpwd, dsn=dsn, encoding="UTF-8")
+connection = cx_Oracle.connect(user="DBusername", password=userpwd, dsn=dsn, encoding="UTF-8")
 cur = connection.cursor()
-Total_Active_Users = "SELECT count(distinct(LOGINNAME)) as \"User Count\" FROM PBEACH_REPOS_B.LOGINHISTORY_SYN WHERE SUBSCRIBER_ID=641 and LOGINDATE>TO_DATE('2021-01-01', 'YYYY-MM-DD') and loginname not like 'bss_%'"
+Total_Active_Users = "SELECT count(distinct(LOGIN_NAME)) as \"User Count\" FROM DBSCHEMA.LOGIN_HISTORY WHERE SUB_ID=@CUST_ID and LOGINDATE>TO_DATE('2021-01-01', 'YYYY-MM-DD') and LOGIN_NAME not like 'SUPERUSER_%'"
 
-FileNameExcel = 'AmkAnalysis_UserData' + str(TimeStamp) + '.xlsx'
+FileNameExcel = 'Analysis_UserData' + str(TimeStamp) + '.xlsx'
 df2 = pd.read_sql(Total_Active_Users, connection)
 
 with pd.ExcelWriter(FileNameExcel) as writer:  # doctest: +SKIP
@@ -31,11 +31,11 @@ with pd.ExcelWriter(FileNameExcel) as writer:  # doctest: +SKIP
 connection.close()
 
 msg = EmailMessage()
-msg['Subject'] = 'Aramark Active Users Count'
-msg['From'] = 'vakasmir@yahoo.com'
-msg['To'] = 'abtiwari@birchstreet.net,vhmir@birchstreet.net'
+msg['Subject'] = 'Customer Active Users Count'
+msg['From'] = 'username@domain.com'
+msg['To'] = 'abc@domain.com,abc@domain.com'
 msg.set_content(
-    "Attached file contains the number of active Users.\nReach out to Vikaus for further clarity on data.\n")
+    "Attached file contains the number of active Users.\nReach out to me for further clarity on data.\n")
 
 with open(FileNameExcel, "rb") as f:
     file_data = f.read()
@@ -44,7 +44,7 @@ with open(FileNameExcel, "rb") as f:
     msg.add_attachment(file_data, maintype="application", subtype="xlsx", filename=file_name)
 try:
     server = smtplib.SMTP_SSL('smtp.mail.yahoo.com', 465)
-    server.login("vakasmir@yahoo.com", "uorxxuctvgepoyso")
+    server.login("username@domain.com", "uorxxuctvgepoyso")
     server.send_message(msg)
     print("Email Sent Sucessfully!")
 except:
