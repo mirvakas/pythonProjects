@@ -41,29 +41,20 @@ for line in Lines:
     df2.dropna()
 # print(df2)
 df2.rename(columns={'A':'Number of Purchasing Locations Live','B':'Number of Invoicing Locations Live','C':'Total Credit Memos',
-'D':'Total Purchase Orders','E':'Total Invoices','F':'Total PO Lines','G':'Total AP Lines','H':'Total Spend in Purchase Orders','I':'Highest Value Purchase Order',
+'D':'Total Purchase Orders','E':'Total Invoices','F':'Total Purchase Order Lines','G':'Total Accounts Payable Lines','H':'Total Spend in Purchase Orders','I':'Highest Value Purchase Order',
 'J':'Total Spend in AP Invoices','K':'Highest Value AP Invoice','L':'Highest Valued Line Item ordered','M':'Highest Valued AP Line','N':'Total Catalog items',
 'O':'Lowest Value Purchase Order','P':'PO Count Trend (8 Rows)','Q':'PO Spend Trend','R':'AP Count Trend','S':'AP Spend Trend','T':'Report Run Count',
 'U':'PO Spend by Supplier (Last 15 Days)','V':'PO Spend by Supplier (Till Date)',
-'W':'Total Units','X1':'Count of Live Profit Centers','X':'Non PO Invoices', 'XA':'Feed Correction Non-PO Inv','Y':'Non PO Supplier Portal AP',
-'Z':'Non-PO EReceive','AB':'Manually Gen <>PO AP/Non-Elect',
-'AC':'PO Invoices','AC1':'Feed Correction PO Inv','AD':'PO Supplier Portal Invoices','AE':'PO EReceive',
-'AF':'Manually Generated PO Invoices','AG':'Purchase by LOB',
-'AH':'Purchase by PC','AI':'Purchase by Site Names','AJ':'AP  Invoice by Site Names', 'AK': 'Total Live Sites'}, inplace=True)
+'W':'Total Units','X1':'Count of Live Customer Profit Sites','X':'Non PO Invoices', 'XA':'EDI Exchange Non-PO Invoices','Y':'Non PO Supplier App AP',
+'Z':'Non-PO CSV','AB':'Manually Gen <>PO AP/Non-Elect',
+'AC':'PO Invoices','AC1':'EDI Exchange PO Inv','AD':'PO Supplier App Invoices','AE':'PO CSV',
+'AF':'Manually Generated PO Invoices','AG':'Purchase by Line of Business',
+'AH':'Purchase by Profit Sites','AI':'Purchase by Area Site Names','AJ':'AP  Invoice by Area Site Names', 'AK': 'Total Live Area Site'}, inplace=True)
 
 
 with pd.ExcelWriter(FileNameExcel) as writer:  # doctest: +SKIP
     df2.to_excel(writer, sheet_name= 'Summary', index=False)
-    df3.to_excel(writer, sheet_name= 'List of AP for Live PCs', index=False)
-    df4.to_excel(writer, sheet_name= 'Feed Non PO Inv', index=False)
-    df5.to_excel(writer, sheet_name= 'Feed PO Inv', index=False)
-    df6.to_excel(writer, sheet_name= 'PO Sup Portal Inv', index=False)
-    df7.to_excel(writer, sheet_name= 'NonPO Sup Portal Inv', index=False)
-    df8.to_excel(writer, sheet_name= 'PO eReceiveInvoices', index=False)
-    df9.to_excel(writer, sheet_name= 'Non PO eReceiveInvoices', index=False)
-    df10.to_excel(writer, sheet_name= 'Manually Gen PO Inv', index=False)
-    df11.to_excel(writer, sheet_name= 'Manually Gen Non PO Inv', index=False)
-    df12.to_excel(writer, sheet_name= 'SQL STATEMENTS', index=False)
+    # df3.to_excel(writer, sheet_name= 'SQL STATEMENTS', index=False)
 
 connection.close()
 
