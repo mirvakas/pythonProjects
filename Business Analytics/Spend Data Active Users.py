@@ -16,7 +16,7 @@ TimeStamp = str(year) + str(month) + str(day)
 
 cx_Oracle.init_oracle_client(lib_dir=r"C:/instantclient_19_12")
 userpwd = "enter your password"  # Obtain password string from a user prompt or environment variable
-dsn = cx_Oracle.makedsn("host name", 1521, service_name="SERVICE_NAME")
+dsn = cx_Oracle.makedsn("host name", 'PORT', service_name="SERVICE_NAME")
 
 connection = cx_Oracle.connect(user="DBusername", password=userpwd, dsn=dsn, encoding="UTF-8")
 cur = connection.cursor()
