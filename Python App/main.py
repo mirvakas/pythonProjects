@@ -10,6 +10,12 @@ pycrypto = Tk()
 pycrypto.title("My Crypto Portfolio")
 pycrypto.iconbitmap('C:/Users/mirva/PycharmProjects/pythonProject/Python App/favicon.ico')
 
+def font_color(profit_earned):
+    if profit_earned>0:
+        return "green"
+    else:
+        return "red"
+
 def my_portfolio():
     try:
         # This is my basic developer account API Key, I am passing query params to limit the data output.
@@ -70,23 +76,31 @@ def my_portfolio():
                     amount_paid = Label(pycrypto, text = "${0:.2f}".format(total_paid), bg= "white" , fg="black", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
                     amount_paid.grid(row=r_count, column=3, sticky=N+S+E+W)
 
-                    current_value = Label(pycrypto, text = "${0:.2f}".format(current_val), bg= "white" , fg="black", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
+                    current_value = Label(pycrypto, text = "${0:.2f}".format(current_val), bg= "white" , fg=font_color(float(current_val)), font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
                     current_value.grid(row=r_count, column=4, sticky=N+S+E+W)
 
-                    pl_per_coin = Label(pycrypto, text = "${0:.2f}".format(profit_earned), bg= "white" , fg="black", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
+                    pl_per_coin = Label(pycrypto, text = "${0:.2f}".format(profit_earned), bg= "white" , fg=font_color(float(profit_earned)), font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
                     pl_per_coin.grid(row=r_count, column=5, sticky=N+S+E+W)
 
                     r_count = r_count + 1
                     
         
     except:
-        print("There was an error in loading the JSON values, the URL may no longer be supported") 
+        pass
+    
     tpl = Label(pycrypto, text = "TOTAL", bg= "white" , fg="black", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
-    tpl.grid(row=r_count, column=0, sticky=N+S+E+W)    
-    tpl = Label(pycrypto, text = "${0:.2f}".format(total_pl), bg= "white" , fg="black", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
+    tpl.grid(row=r_count, column=0,columnspan=5, sticky=N+S+E+W)
+        
+    tpl = Label(pycrypto, text = "${0:.2f}".format(total_pl), bg= "white" , fg=font_color(total_pl), font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
     tpl.grid(row=r_count, column=5, sticky=N+S+E+W)
-# print("Total Profit-Loss till date: $", "{0:.2f}".format(total_pl))
 
+    update = Button(pycrypto, text = "UPDATE", bg= "orange" , fg="black", command=my_portfolio, font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
+    update.grid(row=r_count+1, columnspan=6, sticky=N+S+E+W)
+    
+    
+    api =""
+
+# print("Total Profit-Loss till date: $", "{0:.2f}".format(total_pl))
 
 name = Label(pycrypto, text = "Coin Name", bg= "#1f7a1f" , fg="white", font="Helvetica 11 bold", padx="6", pady="6", borderwidth=2, relief="ridge")
 name.grid(row=0, column=0, sticky=N+S+E+W)
@@ -108,39 +122,5 @@ pl_per_coin.grid(row=0, column=5, sticky=N+S+E+W)
 my_portfolio()
 pycrypto.mainloop()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # print(coindata_file.read())
-# try:
-#     coindata_file = open('C:/Users/mirva/PycharmProjects/pythonProject/Python App/Coin.txt', "r+")
-#     print(coindata_file.read())
-# except:
-#     print("Unknown Error")
-# coindata_file.write("\n" + "Toby - Human Resource")
-# print(coindata_file.read())
-# coindata_file.close()
+#use pyinstaller library to create .exe file
+#use this to create a single .exe file with a dedicated icon:  pyinstaller filename.py --onefile  --noconsole --icon=iconname.ico
